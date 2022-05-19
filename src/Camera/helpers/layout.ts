@@ -57,7 +57,7 @@ export const getPhoneLayout = (
   baseScale: number
 ): PhoneLayout => {
   // The depth of the phone body
-  const phoneThickness = baseScale * 0.15;
+  const phoneThickness = baseScale * 0.5;
 
   // How big the border of the phone is.
   const phoneBevel = baseScale * 0.04;

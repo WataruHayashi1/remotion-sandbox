@@ -10,7 +10,7 @@ import phone from './Camera/assets/phone.mp4';
 import tablet from './Camera/assets/tablet.mp4';
 
 type Device = 'phone' | 'tablet';
-const deviceType: Device = 'phone'
+const deviceType: Device = 'tablet'
 
 export const RemotionVideo: React.FC = () => {
 	return (
