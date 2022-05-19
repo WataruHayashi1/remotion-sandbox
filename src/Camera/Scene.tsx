@@ -37,7 +37,7 @@ export const Scene: React.FC<{
           <pointLight position={[10, 10, 0]} />
           <Phone
             baseScale={baseScale}
-            videoTexture={texture}
+            // videoTexture={texture}
             aspectRatio={videoData.aspectRatio}
           />
         </ThreeCanvas>

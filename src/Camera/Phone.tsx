@@ -13,10 +13,10 @@ import { roundedRect } from './helpers/rounded-rectangle';
 import { RoundedBox } from './RoundedBox';
 
 export const Phone: React.FC<{
-  videoTexture: VideoTexture | null;
+  // videoTexture: VideoTexture | null;
   aspectRatio: number;
   baseScale: number;
-}> = ({ aspectRatio, videoTexture, baseScale }) => {
+}> = ({ aspectRatio, baseScale }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
 
@@ -36,12 +36,12 @@ export const Phone: React.FC<{
   }, [camera]);
 
   // Make the video fill the phone texture
-  useEffect(() => {
-    if (videoTexture) {
-      videoTexture.repeat.y = 1 / layout.screen.height;
-      videoTexture.repeat.x = 1 / layout.screen.width;
-    }
-  }, [aspectRatio, layout.screen.height, layout.screen.width, videoTexture]);
+  // useEffect(() => {
+  //   if (videoTexture) {
+  //     videoTexture.repeat.y = 1 / layout.screen.height;
+  //     videoTexture.repeat.x = 1 / layout.screen.width;
+  //   }
+  // }, [aspectRatio, layout.screen.height, layout.screen.width, videoTexture]);
 
   // During the whole scene, the phone is rotating.
   // 2 * Math.PI is a full rotation.
@@ -104,13 +104,13 @@ export const Phone: React.FC<{
       </RoundedBox>
       <mesh position={layout.screen.position}>
         <shapeGeometry args={[screenGeometry]} />
-        {videoTexture ? (
+        {/* {videoTexture ? (
           <meshBasicMaterial
             color={0xffffff}
             toneMapped={false}
             map={videoTexture}
           />
-        ) : null}
+        ) : null} */}
       </mesh>
     </group>
   );
